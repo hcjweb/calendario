@@ -22,6 +22,8 @@ for(let year = 2024; year <= 2035; year++){
 
 monthSelector.value = currentMonth;
 
+yearSelector.value = currentYear;
+
 let selectedDay = null;
 
 const firstDay =
