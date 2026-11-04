@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Pessoal - Hélio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>
+                <i class="fa-solid fa-calendar-days"></i>
+                Calendário Pessoal
+            </h1>
+
+            <h2>Novembro 2026</h2>
+        </header>
+
+        <section class="toolbar">
+
+            <button id="btnHoje">
+                <i class="fa-solid fa-house"></i>
+                Hoje
+            </button>
+
+            <button id="btnExportar">
+                <i class="fa-solid fa-file-excel"></i>
+                Exportar
+            </button>
+
+            <input
+                type="text"
+                id="searchEvent"
+                placeholder="Pesquisar compromisso...">
+
+        </section>
+
+        <section class="calendar" id="calendar">
+
+            <div class="weekday">Dom</div>
+            <div class="weekday">Seg</div>
+            <div class="weekday">Ter</div>
+            <div class="weekday">Qua</div>
+            <div class="weekday">Qui</div>
+            <div class="weekday">Sex</div>
+            <div class="weekday">Sáb</div>
+
+        </section>
+
+    </div>
+
+    <!-- Modal Cadastro -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h3 id="selectedDate"></h3>
+
+                <button
+                    class="close-btn"
+                    onclick="closeModal()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <label>
+                Título do compromisso
+            </label>
+
+            <input
+                type="text"
+                id="eventText"
+                placeholder="Digite o compromisso">
+
+            <label>
+                Categoria
+            </label>
+
+            <select id="eventCategory">
+
+                <option value="projeto">
+                    Projeto
+                </option>
+
+                <option value="reuniao">
+                    Reunião
+                </option>
+
+                <option value="mestrado">
+                    Mestrado
+                </option>
+
+                <option value="viagem">
+                    Viagem
+                </option>
+
+                <option value="pessoal">
+                    Pessoal
+                </option>
+
+            </select>
+
+            <label>
+                Observações
+            </label>
+
+            <textarea
+                id="eventNotes"
+                rows="4"
+                placeholder="Observações adicionais">
+            </textarea>
+
+            <div class="modal-actions">
+
+                <button
+                    class="btn-save"
+                    onclick="saveEvent()">
+
+                    Salvar
+
+                </button>
+
+                <button
+                    class="btn-delete"
+                    onclick="deleteEvent()">
+
+                    Excluir
+
+                </button>
+
+                <button
+                    class="btn-cancel"
+                    onclick="closeModal()">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Painel lateral -->
+
+    <aside id="sidebar">
+
+        <h3>
+            Resumo do Mês
+        </h3>
+
+        <div class="card-summary">
+            <span id="totalEvents">0</span>
+            <p>Compromissos</p>
+        </div>
+
+        <div class="card-summary">
+            <span id="totalMeetings">0</span>
+            <p>Reuniões</p>
+        </div>
+
+        <div class="card-summary">
+            <span id="totalProjects">0</span>
+            <p>Projetos</p>
+        </div>
+
+        <div class="card-summary">
+            <span id="totalTravel">0</span>
+            <p>Viagens</p>
+        </div>
+
+    </aside>
+
+    <!-- Javascript -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
