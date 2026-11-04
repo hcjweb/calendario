@@ -1,8 +1,26 @@
 const calendar = document.getElementById("calendar");
 
-let currentMonth = new Date().getMonth();
+const monthSelector = document.getElementById("monthSelector");
+const yearSelector = document.getElementById("yearSelector");
 
+let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
+
+for(let year = 2024; year <= 2035; year++){
+
+    const option = document.createElement("option");
+
+    option.value = year;
+    option.textContent = year;
+
+    if(year === currentYear){
+        option.selected = true;
+    }
+
+    yearSelector.appendChild(option);
+}
+
+monthSelector.value = currentMonth;
 
 let selectedDay = null;
 
