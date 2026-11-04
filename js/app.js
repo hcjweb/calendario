@@ -20,6 +20,8 @@ for(let year = 2024; year <= 2035; year++){
     yearSelector.appendChild(option);
 }
 
+console.log("Ano carregado:", yearSelector.options.length);
+
 monthSelector.value = currentMonth;
 
 yearSelector.value = currentYear;
