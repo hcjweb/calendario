@@ -1,15 +1,16 @@
 const calendar = document.getElementById("calendar");
 
-const month = 10;
-const year = 2026;
+let currentMonth = new Date().getMonth();
+
+let currentYear = new Date().getFullYear();
 
 let selectedDay = null;
 
 const firstDay =
-    new Date(year, month, 1).getDay();
+    new Date(currentYear, currentMonth, 1).getDay();
 
 const daysInMonth =
-    new Date(year, month + 1, 0).getDate();
+    new Date(currentYear, currentMonth + 1, 0).getDate();
 
 for(let i = 0; i < firstDay; i++){
 
@@ -47,7 +48,7 @@ function openModal(day){
 
     document.getElementById("selectedDate")
         .innerText =
-        `Compromissos - ${day}/11/${year}`;
+        `Compromissos - ${day}/${currentMonth + 1}/${currentYear}`;
 }
 
 function closeModal(){
